@@ -18,13 +18,13 @@ class MainActivity : AppCompatActivity(), NewsItemClicked {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         recyclerView.layoutManager = LinearLayoutManager(this)
-  fetchData()
+        fetchData()
         mAdapter = NewsListAdapter(this)
         recyclerView.adapter = mAdapter
     }
 
 private fun fetchData(){
-    val link = "https://newsdata.io/api/1/news?apikey=pub_3843cde1d24d75b515721d04b442203dedb&country=in"
+    val link = "https://newsdata.io/api/1/news?apikey=pub_3843cde1d24d75b515721d04b442203dedb&country=in&language=en"
     val jsonObjectRequest = JsonObjectRequest(
         Request.Method.GET,
         link,
